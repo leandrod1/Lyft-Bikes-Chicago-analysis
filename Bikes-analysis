@@ -117,7 +117,6 @@ all_trips$days_of_week <- ordered(all_trips$days_of_week, levels=c("Sunday", "Mo
 
 # Now, let's run the average ride time by each day for members vs casual users
 aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_week, FUN = mean)
-view(all_trips$member_casual)
 
 # Analyze ridership data by type and weekday
 all_trips %>% mutate(weekday = wday(started_at, label = TRUE)) %>%            #creates weekday field using
