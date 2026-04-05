@@ -27,11 +27,11 @@ The dataset was analyzed as historical data, with insights derived from both bus
 
 ## 📈 Analysis & Insights
 
-🔹 Business Insight
+🔹 Business Insight:
 Peak usage occurs on weekends, especially on Sundays and Saturdays.
 This suggests that demand is largely driven by leisure activities and weekend events.
 
-🔹 Operational Insight
+🔹 Operational Insight:
 Casual riders tend to take longer trips, while members have more consistent ride durations.
 This presents an opportunity to convert casual users into members, particularly those with frequent or longer rides.
 
