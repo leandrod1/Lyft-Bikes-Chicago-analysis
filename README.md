@@ -35,11 +35,11 @@ This suggests that demand is largely driven by leisure activities and weekend ev
 Casual riders tend to take longer trips, while members have more consistent ride durations.
 This presents an opportunity to convert casual users into members, particularly those with frequent or longer rides.
 
-🛠️ Tools & Technologies
+## 🛠️ Tools & Technologies
 R (Data cleaning, analysis, and visualization)
 Ggplot (Data visualization libraries)
 Tableau (Interactive dashboard)
 
-🔗 Project Resources
+## 🔗 Project Resources
 📊 Dashboard: Lyft Bikes Dashboard
 💻 Code: Bikes-analysis file
