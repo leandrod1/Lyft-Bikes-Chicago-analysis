@@ -2,7 +2,7 @@
 
 This project uses [public data from Lyft Bikes and Scooters, LLC](https://divvy-tripdata.s3.amazonaws.com/index.html) to explore bike-sharing usage patterns through an interactive dashboard and data analysis in R.
 
-📌 Project Overview
+## 📌 Project Overview
 
 The goal of this project is to support data-driven decision-making by analyzing rider behavior and identifying key usage trends. The analysis focuses on:
 
@@ -12,7 +12,7 @@ Most popular days of the week
 
 An interactive dashboard was developed to make these insights easily accessible.
 
-📊 Dataset
+## 📊 Dataset
 
 The Lyft Bikes Trips dataset covers the period from October 2023 to October 2024, with monthly updates.
 
@@ -25,7 +25,7 @@ Day of the week
 
 The dataset was analyzed as historical data, with insights derived from both business and operational perspectives.
 
-📈 Analysis & Insights
+## 📈 Analysis & Insights
 
 🔹 Business Insight
 Peak usage occurs on weekends, especially on Sundays and Saturdays.
