@@ -1,6 +1,6 @@
 # 🚲 Lyft Bikes Chicago Data Analysis
 
-[![R](https://img.shields.io/badge/Language-R-276DC3?style=flat&logo=r)](Bikes-analysis)
+[![R](https://img.shields.io/badge/Language-R-276DC3?style=flat&logo=r)](bikes_analysis.md)
 [![Tableau](https://img.shields.io/badge/Tableau-Dashboard-E97627?style=flat-square&logo=tableau&logoColor=white)](TU_LINK_DE_TABLEAU_AQUI)
 
 An end-to-end data analysis project exploring bike-sharing usage dynamics, rider behavior, and trip trends in Chicago using **R** and **Tableau**.
