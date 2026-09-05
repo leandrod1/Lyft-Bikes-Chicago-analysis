@@ -35,8 +35,9 @@ This project uses official public data provided by [Lyft Bikes and Scooters, LLC
 
 ## 🔗 Project Resources
 
+* 📊 **Full Analysis Report:** [Lyft Bikes R Markdown Report](bikes_analysis.md)
 * 📊 **Interactive Dashboard:** [Lyft Bikes Tableau Dashboard](TU_LINK_DE_TABLEAU_AQUI)
-* 📜 **R Code & Script:** [`Bikes-analysis`](./Bikes-analysis)
+* 📜 **R Code & Script:** [bikes_analysis.R](bikes_analysis.R)
 
 ---
 
