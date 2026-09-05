@@ -554,7 +554,6 @@ aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_w
 
 ``` r
 # Translate days of the week in Spanish into English in a structured format
-
 all_trips$days_of_week <- factor(
   tolower(all_trips$days_of_week),
   levels = c("domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"),
