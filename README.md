@@ -1,4 +1,4 @@
-# 🚲 Lyft Bikes Chicago Data Analysis (R & Tableau)
+# 🚲 Lyft Bikes Chicago Data Analysis
 
 [![R](https://img.shields.io/badge/Language-R-276DC3?style=flat&logo=r)](Bikes-analysis)
 [![Tableau](https://img.shields.io/badge/Tableau-Dashboard-E97627?style=flat-square&logo=tableau&logoColor=white)](TU_LINK_DE_TABLEAU_AQUI)
