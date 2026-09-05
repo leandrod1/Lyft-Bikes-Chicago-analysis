@@ -1,45 +1,39 @@
-# 🚲 Lyft Bikes Chicago Data Analysis
+# 🚲 Lyft Bikes Chicago Data Analysis (R & Tableau)
 
-This project uses [public data from Lyft Bikes and Scooters, LLC](https://divvy-tripdata.s3.amazonaws.com/index.html) to explore bike-sharing usage patterns through an interactive dashboard and data analysis in R.
+[![Tableau](https://img.shields.io/badge/Tableau-Interactive_Dashboard-E97627?style=flat&logo=Tableau)](TU_LINK_DE_TABLEAU_AQUI)
+[![R](https://img.shields.io/badge/Language-R-276DC3?style=flat&logo=r)](Bikes-analysis)
 
-## 📌 Project Overview
+An end-to-end data analysis project exploring bike-sharing usage dynamics, rider behavior, and trip trends in Chicago using R and Tableau.
 
-The goal of this project is to support data-driven decision-making by analyzing rider behavior and identifying key usage trends. The analysis focuses on:
+---
 
-- Ride volume by rider type (annual members vs. casual users)
-- Trip distances and duration patterns
-- Most popular days of the week
+## 💡 Key Insights & Recommendations
 
-An interactive dashboard was developed to make these insights easily accessible.
+* 📈 **Business Insight (Weekend Peak):** Peak usage occurs on weekends, especially Saturdays and Sundays. This indicates that demand is largely driven by leisure activities and weekend events rather than daily commutes.
+* ⏱️ **Operational Insight (Rider Dynamics):** Casual riders tend to take longer trips, whereas annual members display more consistent, shorter trip durations. 
+* 🎯 **Strategic Opportunity:** Targeted campaigns can be designed to convert frequent casual riders into annual members, leveraging their high trip duration to offer cost-effective subscription plans.
 
-## 📊 Dataset
+---
 
-The Lyft Bikes Trips dataset covers the period from October 2023 to October 2024, with monthly updates.
+## 📊 Dataset & Preparation
 
-- Key Variables
-- Rider type (annual member or casual user)
-- Start time
-- End time
-- Trip duration
-- Day of the week
+This project uses official public data provided by [Lyft Bikes and Scooters, LLC](https://divvy-tripdata.s3.amazonaws.com/index.html) covering trip records from **October 2023 to October 2024**.
 
-The dataset was analyzed as historical data, with insights derived from both business and operational perspectives.
+**Key Variables Analyzed:**
+* **Rider Type:** Annual Member vs. Casual User
+* **Temporal Metrics:** Start Time, End Time, Trip Duration, Day of the Week
 
-## 📈 Analysis & Insights
-
-_🔹 Business Insight:_
-Peak usage occurs on weekends, especially on Sundays and Saturdays.
-This suggests that demand is largely driven by leisure activities and weekend events.
-
-_🔹 Operational Insight:_
-Casual riders tend to take longer trips, while members have more consistent ride durations.
-This presents an opportunity to convert casual users into members, particularly those with frequent or longer rides.
+---
 
 ## 🛠️ Tools & Technologies
-- R (Data cleaning, analysis, and visualization)
-- Ggplot (Data visualization libraries)
-- Tableau (Interactive dashboard)
+
+* **R Engine:** Data cleaning, aggregation, and statistical analysis.
+* **ggplot2:** Exploratory data visualization and pattern discovery.
+* **Tableau:** Interactive dashboard design for business stakeholders.
+
+---
 
 ## 🔗 Project Resources
-📊 Dashboard: Lyft Bikes Dashboard
-💻 Code: Bikes-analysis file
+
+* 📊 **Interactive Dashboard:** [Lyft Bikes Tableau Dashboard](TU_LINK_DE_TABLEAU_AQUI)
+* 📜 **R Code & Script:** [`Bikes-analysis`](./Bikes-analysis)
