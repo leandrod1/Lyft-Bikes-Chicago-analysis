@@ -553,8 +553,7 @@ aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_w
     ## 14                  member                viernes               743.3845
 
 ``` r
-# Convert dates to days of the week in Spanish and translate them into English in a structured format
-all_trips$days_of_week <- format(as.Date(all_trips$started_at), "%A")
+# Translate days of the week in Spanish into English in a structured format
 
 all_trips$days_of_week <- factor(
   tolower(all_trips$days_of_week),
@@ -584,30 +583,30 @@ aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_w
 
 ``` r
 # Analyze ridership data by type and weekday
-all_trips %>% mutate(weekday = wday(started_at, label = TRUE)) %>%            #creates weekday field using
-  group_by(member_casual, weekday) %>%                                        #groups by usertype and weekday
-  summarise(number_of_rides = n(),average_duration = mean(ride_lengths)) %>%  #calculates the number of rides and average duration
-  arrange(member_casual, weekday)                                             #sorts
+all_trips %>% mutate(weekday = days_of_week) %>%                                                #creates weekday field using
+  group_by(member_casual, weekday) %>%                                                          #groups by usertype and weekday
+  summarise(number_of_rides = n(),average_duration = mean(ride_lengths), .groups = "drop") %>%  #calculates the number of rides and average duration
+  arrange(member_casual, weekday)                                                               #sorts
 ```
 
     ## # A tibble: 14 × 4
     ## # Groups:   member_casual [2]
-    ##    member_casual weekday number_of_rides average_duration
-    ##    <chr>         <ord>             <int>            <dbl>
-    ##  1 casual        "do\\."          401220            1780.
-    ##  2 casual        "lu\\."          275084            1434.
-    ##  3 casual        "ma\\."          259012            1291.
-    ##  4 casual        "mi\\."          299524            1339.
-    ##  5 casual        "ju\\."          297806            1296.
-    ##  6 casual        "vi\\."          341478            1459.
-    ##  7 casual        "sá\\."          473215            1679.
-    ##  8 member        "do\\."          459954             859.
-    ##  9 member        "lu\\."          588687             733.
-    ## 10 member        "ma\\."          638009             736.
-    ## 11 member        "mi\\."          686622             750.
-    ## 12 member        "ju\\."          654266             732.
-    ## 13 member        "vi\\."          575397             743.
-    ## 14 member        "sá\\."          520551             844.
+    ##    member_casual  weekday  number_of_rides average_duration
+    ##    <chr>           <ord>             <int>            <dbl>
+    ##  1 casual          Sunday           401220            1780.
+    ##  2 casual          Monday           275084            1434.
+    ##  3 casual         Tuesday           259012            1291.
+    ##  4 casual       Wednesday           299524            1339.
+    ##  5 casual        Thursday           297806            1296.
+    ##  6 casual          Friday           341478            1459.
+    ##  7 casual        Saturday           473215            1679.
+    ##  8 member          Sunday           459954             859.
+    ##  9 member          Monday           588687             733.
+    ## 10 member         Tuesday           638009             736.
+    ## 11 member       Wednesday           686622             750.
+    ## 12 member        Thursday           654266             732.
+    ## 13 member          Friday           575397             743.
+    ## 14 member        Saturday           520551             844.
 
 ``` r
 # Let's visualize the number of rides by rider type
