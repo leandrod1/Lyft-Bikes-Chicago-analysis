@@ -8,6 +8,9 @@ library(conflicted)
 conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 
+# To recognize scales
+library(scales)
+
 # Use the readxl package to read xlsx files
 library(readxl)
 
@@ -111,31 +114,43 @@ aggregate(all_trips$ride_lengths ~ all_trips$member_casual, FUN = min)
 # See the average ride time by each day for members vs casual users
 aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_week, FUN = mean)
 
-# The days of the week are out of order. Let's fix that
-all_trips$days_of_week <- ordered(all_trips$days_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday",
-                                                                   "Thursday", "Friday", "Saturday"))
+# Convert dates to days of the week in Spanish and translate them into English in a structured format
+all_trips$days_of_week <- factor(
+  tolower(all_trips$days_of_week),
+  levels = c("domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"),
+  labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"),
+  ordered = TRUE)
 
 # Now, let's run the average ride time by each day for members vs casual users
 aggregate(all_trips$ride_lengths ~ all_trips$member_casual + all_trips$days_of_week, FUN = mean)
 
 # Analyze ridership data by type and weekday
-all_trips %>% mutate(weekday = wday(started_at, label = TRUE)) %>%            #creates weekday field using
-  group_by(member_casual, weekday) %>%                                        #groups by usertype and weekday
-  summarise(number_of_rides = n(),average_duration = mean(ride_lengths)) %>%  #calculates the number of rides and average duration
-  arrange(member_casual, weekday)                                             #sorts
+all_trips %>% mutate(weekday = days_of_week) %>%                                                #creates weekday field using
+  group_by(member_casual, weekday) %>%                                                          #groups by usertype and weekday
+  summarise(number_of_rides = n(),average_duration = mean(ride_lengths), .groups = "drop") %>%  #calculates the number of rides and average duration
+  arrange(member_casual, weekday)                                                               #sorts
 
 # Let's visualize the number of rides by rider type
-all_trips %>% mutate(weekday = wday(started_at, label = TRUE)) %>% 
-  group_by(member_casual, weekday) %>%
-  summarise(number_of_rides = n(),average_duration = mean(ride_lengths)) %>%
-  arrange(member_casual, weekday)%>%
+all_trips %>% mutate(weekday = days_of_week) %>% 
+  group_by(member_casual, weekday) %>% 
+  summarise(number_of_rides = n(), average_duration = mean(ride_lengths), .groups = "drop") %>%
   ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Total Rides by Day of Week",
+    x = "Day of Week",
+    y = "Number of Rides",
+    fill = "User Type")
 
 # Let's create a visualization for average duration
-all_trips %>% mutate(weekday = wday(started_at, label = TRUE)) %>% 
-  group_by(member_casual, weekday) %>%
-  summarise(number_of_rides = n(),average_duration = mean(ride_lengths)) %>%
-  arrange(member_casual, weekday)%>%
+all_trips %>% mutate(weekday = days_of_week) %>% 
+  group_by(member_casual, weekday) %>% 
+  summarise(number_of_rides = n(), average_duration = mean(ride_lengths), .groups = "drop") %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average Duration by Day of Week",
+    x = "Day of Week",
+    y = "Average Duration (seconds)",
+    fill = "User Type")
